@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tareas Pendientes</title>
+</head>
+<body>
+    <h1>Tareas Pendientes</h1>
+    <form method="POST">
+        <input type="text" name="tarea" placeholder="Ingrese una nueva tarea">
+        <input type="submit" name="action" value="Agregar">
+    </form>
+    <ul>
+        {% for tarea in tareas %}
+            <li>
+                {{ tarea.descripcion }} - 
+                {% if tarea.completada %}
+                    Completada
+                {% else %}
+                    Pendiente
+                {% endif %}
+                <form method="POST">
+                    <input type="hidden" name="posicion" value="{{ loop.index0 }}">
+                    <input type="submit" name="action" value="Marcar">
+                    <input type="submit" name="action" value="Eliminar">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
