@@ -25,8 +25,3 @@ print(newString)
 
 #   Devolvería: Esto FUE bonito. Esto FUE bueno.
 # ----------------------------------------------------------------
-texto = "Esto es bueno, para nosotros es tambien"
-print(texto.find('es'))
-print(texto.rfind('es'))
-newtexto = texto.replace("es", "fue")
-print(newtexto)
