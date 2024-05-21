@@ -17,7 +17,7 @@ class TareasPendientes:
             print("La posición especificada no existe.")
 
     def mostrar_tareas(self):
-        print("Tareas pendientes:")
+        print("\nTareas pendientes:\n")
         # Itera sobre todas las tareas y las imprime mostrando su estado (completada o pendiente)
         for i, tarea in enumerate(self.tareas):
             estado = "Completada" if tarea["completada"] else "Pendiente"
@@ -47,12 +47,13 @@ def main():
         print("4. Eliminar tarea")
         print("5. Salir")
 
-        opcion = input("Seleccione una opción: ")
+        opcion = input("\nSeleccione una opción: ")
 
         if opcion == "1":
             # Solicita al usuario la descripción de la nueva tarea y la agrega a la lista
             tarea = input("Ingrese la descripción de la nueva tarea: ")
             tareas.agregar_tarea(tarea)
+            
         elif opcion == "2":
             # Solicita al usuario la posición de la tarea a marcar como completada y lo hace
             posicion = int(input("Ingrese la posición de la tarea a marcar como completada: ")) - 1

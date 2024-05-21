@@ -5,8 +5,6 @@
 
 # CREACIÓN DE UNA CLASE
 
-from ast import If
-
 
 class Coche():
 # Declaración de atributos
@@ -19,7 +17,7 @@ class Coche():
 
 # Declaración de métodos
     def arrancar(self):             # self hace referencia a la instancia de clase.
-        self.is_enMarcha = True    # Es como si pusiésemos miCoche.is_enMarcha = True
+        self.is_enMarcha = True     # Es como si pusiésemos miCoche.is_enMarcha = True
 
     def estado(self):
         if (self.is_enMarcha == True):
@@ -29,13 +27,16 @@ class Coche():
 
 # Declaración de una instancia de clase, objeto de clase o ejemplar de clase.
 miCoche = Coche()
+miCoche2 = Coche()
 
 # Acceso a un atributo de la clase Coche. Nomenclatura del punto.
 print("El largo del coche es de" , miCoche.largo, "cm.")
-print("Mi coche es de color: " , miCoche.color,)
-print("Tiene un peso: ", miCoche.peso,)
 miCoche.arrancar()
 print(miCoche.estado())
 
 # Acceso a un método de la clase Coche. Nomenclatura del punto.
 print("El coche está arrancado:" , miCoche.arrancar())
+
+#Modificamos el valor de una propiedad
+miCoche2.ruedas = 10
+print("El coche2 tiene:" , miCoche2.ruedas, "ruedas.")
